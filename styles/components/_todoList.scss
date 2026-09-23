@@ -1,0 +1,168 @@
+.tasks {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding-bottom: 70px;
+}
+
+
+// TASK
+
+.task {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+    min-height: 52px;
+
+    padding: 9px 10px 9px 12px;
+
+    border-radius: 14px;
+
+    background: $color-task;
+
+
+    // CHECKBOX
+
+    &__checkbox {
+        position: relative;
+
+        flex-shrink: 0;
+
+        margin-top: 7px;
+
+        cursor: pointer;
+
+        input {
+            position: absolute;
+
+            width: 0;
+            height: 0;
+
+            opacity: 0;
+        }
+    }
+
+
+    // CONTENT
+
+    &__content {
+        flex: 1;
+
+        min-width: 0;
+
+        margin-left: 12px;
+    }
+
+
+    &__date {
+        display: block;
+
+        font-size: 12px;
+        line-height: 16px;
+
+        color: $color-text-secondary;
+    }
+
+
+    &__title {
+        margin-top: 2px;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $color-text-task;
+
+        word-break: break-word;
+    }
+
+
+    // ACTIONS
+
+    &__actions {
+        display: flex;
+        align-items: center;
+
+        margin-left: 6px;
+    }
+
+
+    &__edit,
+    &__delete {
+        @include flex-center;
+
+        width: 28px;
+        height: 28px;
+
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+
+        background: transparent;
+
+        color: $color-primary;
+
+        cursor: pointer;
+
+        &:hover {
+            background: $color-filter-active;
+        }
+
+        .material-icons {
+            font-size: 18px;
+        }
+    }
+}
+
+
+// CHECKBOX
+
+.checkbox {
+    @include flex-center;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #57515a;
+    border-radius: 2px;
+
+    background: transparent;
+
+    .material-icons {
+        display: none;
+
+        font-size: 13px;
+    }
+}
+
+
+// CHECKED
+
+.task__checkbox input:checked + .checkbox {
+
+    border-color: $color-primary;
+
+    background: $color-checkbox;
+
+    .material-icons {
+        display: block;
+
+        color: #5d3c92;
+    }
+}
+
+
+// COMPLETED
+
+.task--completed {
+
+    .task__date,
+    .task__title {
+        color: $color-text-completed;
+
+        text-decoration: line-through;
+    }
+}

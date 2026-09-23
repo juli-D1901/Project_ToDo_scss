@@ -1,0 +1,38 @@
+body {
+    font-family: $font-main;
+
+    background: $color-page;
+
+    color: $color-text;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    position: relative;
+
+    width: 428px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 24px 32px;
+
+    background: $color-background;
+
+    overflow: hidden;
+}
+
+@media (max-width: 428px) {
+
+    .app {
+        width: 100%;
+    }
+}

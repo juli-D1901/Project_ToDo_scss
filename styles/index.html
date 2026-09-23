@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo List</title>
+
+    <!-- Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <header class="header">
+        <h1 class="header__title" id="currentDay">Среда</h1>
+
+        <p class="header__date" id="currentDate">3 января</p>
+      </header>
+
+      <!-- =========================
+             SEARCH
+        ========================== -->
+
+      <div class="search">
+        <input
+          type="text"
+          class="search__input"
+          id="searchInput"
+          placeholder="Поиск"
+        />
+
+        <span class="material-icons search__icon"> search </span>
+      </div>
+
+      <!-- =========================
+             FILTERS
+        ========================== -->
+
+      <div class="filters">
+        <button class="filter filter--active" data-filter="all">
+          <span class="material-icons filter__check"> check </span>
+
+          Все
+        </button>
+
+        <button class="filter" data-filter="active">Активные</button>
+
+        <button class="filter" data-filter="completed">Завершенные</button>
+      </div>
+
+      <!-- =========================
+             TASK LIST
+        ========================== -->
+
+      <section class="tasks" id="tasksContainer">
+        <!-- Задачи будут создаваться через JS -->
+      </section>
+
+      <!-- =========================
+             ADD BUTTON
+        ========================== -->
+
+      <button class="add-button" id="addButton" aria-label="Добавить задачу">
+        <span class="material-icons"> edit </span>
+      </button>
+
+      <!-- =========================
+             MODAL
+        ========================== -->
+
+      <div class="modal" id="modal">
+        <div class="modal__handle"></div>
+
+        <div class="modal__content">
+          <!-- DESCRIPTION -->
+
+          <input
+            type="text"
+            class="modal__input"
+            id="descriptionInput"
+            placeholder="Описание"
+            maxlength="100"
+          />
+
+          <!-- DATE -->
+
+          <input type="datetime-local" class="modal__input" id="dateInput" />
+
+          <!-- REMINDER -->
+
+          <div class="reminder">
+            <span class="reminder__text"> Напомнить мне </span>
+
+            <label class="switch">
+              <input type="checkbox" id="reminderInput" />
+
+              <span class="switch__slider"></span>
+            </label>
+          </div>
+
+          <!-- BUTTONS -->
+
+          <div class="modal__buttons">
+            <button class="button button--add" id="saveButton">Добавить</button>
+
+            <button class="button button--cancel" id="cancelButton">
+              Отмена
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+.header {
+    margin-bottom: 14px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    &__date {
+        margin-top: 2px;
+
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+}
+
+.header {
+
+    &__title { }
+
+    &__date { }
+}
